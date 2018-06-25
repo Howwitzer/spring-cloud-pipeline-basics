@@ -4,3 +4,7 @@ eureka:
       defaultZone: ${vcap.services.practical-microservices-eureka.credentials.uri:http://127.0.0.1:8761}/eureka/
   instance:
     nonSecurePort: 80
+spring:
+  jpa.hibernate.ddl-auto: none
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver

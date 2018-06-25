@@ -25,6 +25,5 @@ management:
       show-details: always
 
 spring:
-  jpa.hibernate.ddl-auto: none
-  datasource:
-    driverClassName: com.mysql.jdbc.Driver
+  jpa:
+    database: MYSQL

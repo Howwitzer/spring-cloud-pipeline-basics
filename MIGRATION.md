@@ -46,5 +46,7 @@ $ cf push -p target/eureka-server-0.0.1.M1.jar
 $ cf create-user-provided-service practical-microservices-eureka
 ```
 - Cloned `spring-cloud-pipelines` and created the pipeline credentials by copying the sample ones from concourse
-- Created pipelines from the `spring-cloud-pipeline-basics` but `project_name` must correspond to the `billboard-client` and `message-service`  
+- Created pipelines from the `spring-cloud-pipeline-basics` but `project-name` must correspond to the `billboard-client` and `message-service`
+- Created a `version-billboard-client` and `version-message-service` empty branches. In the `pipeline.yml` in spring-cloud-pipelines
+changed the `version` branch to from `version` to `((project-name))-version`
 
