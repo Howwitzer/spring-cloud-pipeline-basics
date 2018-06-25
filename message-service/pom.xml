@@ -148,6 +148,7 @@
                                 <!-- Will get injected by the deployment pipeline -->
                                 <version>${latest.production.version}</version>
                             </contractDependency>
+                            <contractsMode>REMOTE</contractsMode>
                             <contractsPath>/</contractsPath>
                             <baseClassForTests>com.example.messageservice.BaseTestClass</baseClassForTests>
                         </configuration>
