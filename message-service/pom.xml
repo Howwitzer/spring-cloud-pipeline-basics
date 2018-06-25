@@ -132,6 +132,7 @@
                                 <include>**/contracttests/**/*Tests.java</include>
                                 <include>**/contracttests/**/*Test.java</include>
                             </includes>
+                            <failIfNoTests>true</failIfNoTests>
                         </configuration>
                     </plugin>
                     <plugin>
@@ -151,6 +152,7 @@
                             <contractsMode>REMOTE</contractsMode>
                             <contractsPath>/</contractsPath>
                             <baseClassForTests>com.example.messageservice.BaseTestClass</baseClassForTests>
+                            <basePackageForTests>com.example.contracttests</basePackageForTests>
                         </configuration>
                     </plugin>
                 </plugins>
