@@ -8,8 +8,8 @@ test:
   services:
     - name: practical-microservices-db
       type: broker
-      broker: cleardb
-      plan: spark
+      broker: p-mysql
+      plan: 100mb
     - name: practical-microservices-eureka
       type: app
       coordinates: com.example:eureka-server:0.0.1.M1
@@ -20,8 +20,8 @@ stage:
   services:
     - name: practical-microservices-db
       type: broker
-      broker: cleardb
-      plan: spark
+      broker: p-mysql
+      plan: 100mb
     - name: practical-microservices-eureka
       type: app
       coordinates: com.example:eureka-server:0.0.1.M1

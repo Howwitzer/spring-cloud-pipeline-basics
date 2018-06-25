@@ -6,7 +6,7 @@
 test:
   # list of required services
   services:
-    - name: github-eureka
+    - name: practical-microservices-eureka
       type: app
       coordinates: com.example:eureka-server:0.0.1.M1
       pathToManifest: sc-pipelines/manifest-eureka.yml
@@ -14,7 +14,7 @@ test:
 stage:
   # list of required services
   services:
-    - name: github-eureka
+    - name: practical-microservices-eureka
       type: app
       coordinates: com.example:eureka-server:0.0.1.M1
       pathToManifest: sc-pipelines/manifest-eureka.yml
