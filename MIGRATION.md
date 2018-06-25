@@ -43,7 +43,7 @@ $ cf create-service p-mysql 100mb practical-microservices-db
 ```bash
 $ cd eureka-server 
 $ cf push -p target/eureka-server-0.0.1.M1.jar
-$ cf create-user-provided-service practical-microservices-eureka
+$ cf create-user-provided-service practical-microservices-eureka -r https://practical-microservices-eureka.apps.cf.q.examples.cf
 ```
 - Cloned `spring-cloud-pipelines` and created the pipeline credentials by copying the sample ones from concourse
 - Created pipelines from the `spring-cloud-pipeline-basics` but `project-name` must correspond to the `billboard-client` and `message-service`

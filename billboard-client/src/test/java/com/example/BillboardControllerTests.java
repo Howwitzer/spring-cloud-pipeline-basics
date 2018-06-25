@@ -13,14 +13,17 @@ import static org.junit.Assert.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-@AutoConfigureStubRunner(ids="com.example:message-service",stubsMode = StubRunnerProperties.StubsMode.LOCAL)
+@AutoConfigureStubRunner(ids="com.example:message-service",
+        // REPO_WITH_BINARIES comes from sc-pipelines
+        repositoryRoot = "${REPO_WITH_BINARIES:https://qconny2018.jfrog.io/qconny2018/libs-release-local}",
+        stubsMode = StubRunnerProperties.StubsMode.REMOTE)
 public class BillboardControllerTests {
 
     @Autowired
     private BillboardController controller;
 
     @Test
-    public void get() {
+    public void should_return_a_quote() {
         // when:
         String quote = controller.get();
         // then:
