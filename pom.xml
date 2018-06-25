@@ -23,7 +23,30 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
+        <maven-surefire.version>2.20</maven-surefire.version>
+
+        <!-- [PIPELINE] -->
+        <distribution.management.release.id>artifactory-qconny2018</distribution.management.release.id>
+        <distribution.management.snapshot.url>https://qconny2018.jfrog.io/qconny2018/libs-snapshot-local</distribution.management.snapshot.url>
+        <distribution.management.release.url>https://qconny2018.jfrog.io/qconny2018/libs-release-local</distribution.management.release.url>
+        <repo.with.binaries>https://qconny2018.jfrog.io/qconny2018/libs-release-local</repo.with.binaries>
+        <!-- [PIPELINE] -->
     </properties>
+
+    <!-- [PIPELINE] -->
+    <distributionManagement>
+        <repository>
+            <id>${distribution.management.release.id}</id>
+            <name>Artifactory Repository</name>
+            <url>${distribution.management.release.url}</url>
+        </repository>
+        <snapshotRepository>
+            <id>${distribution.management.release.id}</id>
+            <name>Artifactory Snapshot Repository</name>
+            <url>${distribution.management.snapshot.url}</url>
+        </snapshotRepository>
+    </distributionManagement>
+
 
     <modules>
         <module>eureka-server</module>
@@ -52,5 +75,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

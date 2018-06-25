@@ -6,6 +6,15 @@ public class Quote
     private String quote;
     private String author;
 
+    public Quote(Integer id, String quote, String author) {
+        this.id = id;
+        this.quote = quote;
+        this.author = author;
+    }
+
+    public Quote() {
+    }
+
     public Integer getId() {
         return id;
     }

@@ -5,4 +5,4 @@ applications:
   - practical-microservices-eureka
   env:
     JAVA_OPTS: -Djava.security.egd=file:///dev/urandom
-    TRUST_CERTS: api.run.pivotal.io
+    SPRING_PROFILES_ACTIVE: cloud
