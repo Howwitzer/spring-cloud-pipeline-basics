@@ -1,19 +1,16 @@
 # Migration to Spring Cloud Pipelines
 
 - Added Maven wrapper to each project
-
 ```bash
 $ mvn -N io.takari:maven:wrapper
 $ git add .
 $ git add -f .mvn
 $ git commit -m "Added maven wrapper" 
 ```
-
 - Added `manifest.yml` to apps
 - Added `sc-pipelines.yml`
     - added database and eureka as a required service
 - Created cloud foundry spaces
-
 ```bash
 $ cf login -o ... -a ...
 $ cf create-space sc-pipelines-test-message-service
@@ -21,7 +18,6 @@ $ cf create-space sc-pipelines-test-billboard-client
 $ cf create-space sc-pipelines-stage
 $ cf create-space sc-pipelines-prod
 ```
-
 - Added `<distributionManagement>` section for all projects
 - Configured local `~/.m2/setting.xml` to have an entry like this
 ```
@@ -42,6 +38,12 @@ $ cf create-space sc-pipelines-prod
 - Created the `practical-microservices-db` database service for `spring-cloud-pipelines` prod space
 ```bash
 $ cf create-service p-mysql 100mb practical-microservices-db
+```
+- Created the `practical-microservices-eureka` app on production
+```bash
+$ cd eureka-server 
+$ cf push -p target/eureka-server-0.0.1.M1.jar
+$ cf create-user-provided-service practical-microservices-eureka
 ```
 - Cloned `spring-cloud-pipelines` and created the pipeline credentials by copying the sample ones from concourse
 - Created pipelines from the `spring-cloud-pipeline-basics` but `project_name` must correspond to the `billboard-client` and `message-service`  

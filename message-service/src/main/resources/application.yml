@@ -23,3 +23,8 @@ management:
   endpoint:
     health:
       show-details: always
+
+spring:
+  jpa.hibernate.ddl-auto: none
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
