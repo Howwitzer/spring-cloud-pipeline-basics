@@ -17,9 +17,8 @@ $ git commit -m "Added maven wrapper"
 ```bash
 $ cf login -o ... -a ...
 $ cf create-space sc-pipelines-test-message-service
-$ cf create-space sc-pipelines-stage-message-service
 $ cf create-space sc-pipelines-test-billboard-client
-$ cf create-space sc-pipelines-stage-billboard-client
+$ cf create-space sc-pipelines-stage
 $ cf create-space sc-pipelines-prod
 ```
 
@@ -40,7 +39,10 @@ $ cf create-space sc-pipelines-prod
 - Configured just echoing of some text under `apicompatibility` profile (for `billboard-client`) to show that it's not mandatory to do that step (you could also remove it from the pipeline)
 - Added `smoke` tests (just pining health initially) (initially only for `shortages-prediction-adapters` but could be added for more)
 - Added `e2e` tests (just pining health initially) (initially only for `shortages-prediction-adapters` but could be added for more)
-- Created the `practical-microservices-db` database service for production
+- Created the `practical-microservices-db` database service for `spring-cloud-pipelines` prod space
+```bash
+$ cf create-service p-mysql 100mb practical-microservices-db
+```
 - Cloned `spring-cloud-pipelines` and created the pipeline credentials by copying the sample ones from concourse
-- Created pipelines from the `spring-cloud-pipeline-basics` but REPO_NAME must correspond to the `billboard-client` and `message-service`  
+- Created pipelines from the `spring-cloud-pipeline-basics` but `project_name` must correspond to the `billboard-client` and `message-service`  
 

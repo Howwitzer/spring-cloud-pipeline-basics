@@ -28,7 +28,7 @@ public class SmokeTests {
 	@Test
 	public void shouldWork() {
 		ResponseEntity<String> entity = this.testRestTemplate
-				.getForEntity("http://" + this.applicationUrl + "/actuator/health", String.class);
+				.getForEntity("http://" + this.applicationUrl + "/", String.class);
 
 		then(entity.getStatusCode().is2xxSuccessful()).isTrue();
 	}
